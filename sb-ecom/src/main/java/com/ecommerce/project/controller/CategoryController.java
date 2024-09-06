@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+//@RequestMapping("/api")
 public class CategoryController {
     private CategoryService categoryService;
 
@@ -18,7 +19,8 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
-    @GetMapping("/api/public/categories")
+//    @GetMapping("/api/public/categories")
+    @RequestMapping(value = "/api/public/categories", method = RequestMethod.GET)
     public List<Category> getAllCategories(){
         return categoryService.getAllCategories();
     }
